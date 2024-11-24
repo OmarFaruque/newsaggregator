@@ -1,22 +1,36 @@
-# News Aggregator API - Docker Setup
+## Docker Setup for News Aggregator API
 
-## Overview
-
-This guide walks you through the steps required to run the **News Aggregator API** using Docker and Docker Compose. Docker allows us to create a consistent development environment and isolate dependencies, making it easy to run the Laravel application along with a MySQL database container.
+This project uses Docker to provide a consistent development environment. Below are the steps to set up and run the application using Docker.
 
 ### Prerequisites
 
-Before proceeding, make sure you have the following installed:
+Ensure that you have the following installed on your local machine:
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-1. **Docker** – To run containers.
-2. **Docker Compose** – To manage multi-container Docker applications.
+### Docker Setup
 
-### Steps to Run the Application with Docker
+The project includes a `docker-compose.yml` file that defines the services required to run the application. These services include the web application (Laravel) and a MySQL database.
 
-#### 1. Clone the Repository
+### Running the Application
 
-Clone the repository or download the project files to your local machine:
+1. **Clone the repository** (if you haven’t already):
 
-```bash
-git clone https://github.com/OmarFaruque/newsaggregator.git
-cd newsaggregator
+   ```bash
+   git clone https://github.com/OmarFaruque/newsaggregator.git
+   cd newsaggregator
+
+2. **Build the Docker containers** :
+Run the following command to build the containers based on the `Dockerfile` and `docker-compose.yml`:
+   
+   ```bash
+   docker-compose build
+
+3. **Start the Docker containers** :
+Once the build is complete, start the application and database containers
+   
+   ```bash
+   docker-compose up -d
+
+4. **Access the Application** :
+The Laravel application should now be running on `http://localhost:8000`

@@ -110,7 +110,7 @@ class AuthController extends Controller
         return response()->json([
             'user' => $user,
             'token' => $user->createToken('newsaggregator')->plainTextToken
-        ]);
+        ], 201);
     }
 
     /**
@@ -199,7 +199,7 @@ class AuthController extends Controller
             return response()->json([
                 'user' => $user,
                 'token' => $user->createToken('newsaggregator')->plainTextToken
-            ]);
+            ], 201);
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
